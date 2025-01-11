@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="headbar">
+        <h1>영화 검색</h1>
+        <input id="searchInput" type="text" placeholder="영화를 검색하세요..."
+            onkeypress="if( event.keyCode == 13 ){enterKey()}">
+        <button id="searchBtn">검색</button>
+    </header>
+    <main>
+        <ul id="cardArea">
+            <!-- 영화 카드 -->
+        </ul>
+        <div id="modal" class="modal">
+            <div id="mainContent">
+                <span class="close">&times;</span>
+                <h2 class="modalTitle">제목</h2>
+                <p id="modalBody">내용</p>
+            </div>
+        </div>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
