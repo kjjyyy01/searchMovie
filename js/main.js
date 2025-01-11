@@ -67,13 +67,12 @@ function makeCard(movies) {
 }
 
 //* 버튼 검색 기능 함수
-//todo 대문자 소문자 검색 기능 둘다 uppercase 또는 lowercase 로 비교
 //todo 검색 결과만 화면에 보이기
 function searchMovie() {
     searchBtn.addEventListener("click", function () {
-        const keyword = searchInput.value;
+        const keyword = searchInput.value.toLowerCase();
         const filteredMovie = popularMoviesArr.filter(function (movie) {
-            return movie["title"].includes(keyword);
+            return movie["title"].toLowerCase().includes(keyword);
         });
         console.log(filteredMovie);
     });
@@ -82,9 +81,9 @@ searchMovie();
 
 //* 엔터기 검색 기능 함수
 const enterKey = () => {
-    const keyword = searchInput.value;
+    const keyword = searchInput.value.toLowerCase();
     const filteredMovie = popularMoviesArr.filter(function (movie) {
-        return movie["title"].includes(keyword);
+        return movie["title"].toLowerCase().includes(keyword);
     });
     console.log(filteredMovie);
 };
