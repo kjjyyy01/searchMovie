@@ -50,69 +50,44 @@ function makeCard(movies) {
         
         `;
     });
-
-    // for (let i = 0; i < movieData.length; i++) {
-    //     let moviePoster = `https://image.tmdb.org/t/p/w500${movieData[i]["poster_path"]}`;
-    //     let movieTitle = movieData[i]["title"];
-    //     let movieVoteAvg = movieData[i]["vote_average"];
-    //     makeLi += `
-    //     <li class="movieCard" id="${movieData[i].id}">
-    //     <img src="${moviePoster}" alt="">
-    //     <p class="title">${movieTitle}</p>
-    //     <p class="voteAvg">${movieVoteAvg}</p>
-    //     </li>`;
-    // }
     resultUl.innerHTML = makeLi;
 }
 
-//* 버튼 검색 기능 함수
-function searchMovie() {
-    searchBtn.addEventListener("click", function () {
-        const keyword = searchInput.value.toLowerCase();
-        const movieCards = document.querySelectorAll(".movieCard");
-        const filteredTitles = [];
+//*검색 기능 함수
+function searchMovies(keyword) {
+    const filteredMovie = popularMoviesArr.filter(function (movie) {
+        return movie["title"].toLowerCase().includes(keyword);
+    });
+    console.log(filteredMovie);
 
-        movieCards.forEach((card) => {
-            const title = card
-                .querySelector(".title")
-                .textContent.toLowerCase();
-            title.includes(keyword)
-                ? (card.style.display = "block") && filteredTitles.push(title)
-                : (card.style.display = "none");
-        });
-        if (filteredTitles.length > 0) {
-            console.log(filteredTitles);
+    const movieCards = document.querySelectorAll(".movieCard");
+    movieCards.forEach((card) => {
+        const cardTitle = card
+            .querySelector(".title")
+            .textContent.toLowerCase();
+        if (
+            filteredMovie.some(
+                (movie) => movie.title.toLowerCase() === cardTitle
+            )
+        ) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
         }
     });
 }
-searchMovie();
-// const filteredMovie = popularMoviesArr.filter(function (movie) {
-//     return movie["title"].toLowerCase().includes(keyword);
-// });
-// console.log(filteredMovie);
 
-//* 엔터기 검색 기능 함수
-function enterKey() {
+searchBtn.addEventListener("click", () => {
     const keyword = searchInput.value.toLowerCase();
-    const movieCards = document.querySelectorAll(".movieCard");
-    const filteredTitles = [];
+    searchMovies(keyword);
+});
 
-    movieCards.forEach((card) => {
-        const title = card.querySelector(".title").textContent.toLowerCase();
-        title.includes(keyword)
-            ? (card.style.display = "block") && filteredTitles.push(title)
-            : (card.style.display = "none");
-    });
-    if (filteredTitles.length > 0) {
-        console.log(filteredTitles);
+searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        const keyword = searchInput.value.toLowerCase();
+        searchMovies(keyword);
     }
-}
-enterKey();
-
-// const filteredMovie = popularMoviesArr.filter(function (movie) {
-//     return movie["title"].toLowerCase().includes(keyword);
-// });
-// console.log(filteredMovie);
+});
 
 //* 모달창 여는 함수
 function openModal() {
