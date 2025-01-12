@@ -2,8 +2,8 @@
 const resultUl = document.querySelector("#cardArea");
 const searchBtn = document.querySelector("#searchBtn");
 const searchInput = document.querySelector("#searchInput");
-const Modal = document.querySelector(".modal");
-const close = document.querySelector(".close");
+const Modal = document.querySelector("#modal");
+const Close = document.querySelector("#close");
 
 const popularMoviesUrl =
     "https://api.themoviedb.org/3/movie/popular?language=ko&page=1";
@@ -44,9 +44,9 @@ function makeCard(movies) {
         let movieId = movie["id"];
         makeLi += `
         <li class="movieCard" id="${movieId}">
-        <img src="${moviePoster}" alt="">
+        <img class="poster"src="${moviePoster}" alt="">
         <p class="title">${movieTitle}</p>
-        <p class="voteAvg">${movieVoteAvg}</p>
+        <p class="voteAvg">⭐: ${movieVoteAvg}</p>
         </li>
         
         `;
@@ -80,13 +80,14 @@ function searchMovie() {
 searchMovie();
 
 //* 엔터기 검색 기능 함수
-const enterKey = () => {
+function enterKey() {
     const keyword = searchInput.value.toLowerCase();
     const filteredMovie = popularMoviesArr.filter(function (movie) {
         return movie["title"].toLowerCase().includes(keyword);
     });
     console.log(filteredMovie);
-};
+}
+enterKey();
 
 //* 모달창 여는 함수
 function openModal() {
@@ -100,7 +101,7 @@ openModal();
 
 //* 모달창 닫는 함수 & 닫기 버튼
 function closeModal() {
-    close.addEventListener("click", function () {
+    Close.addEventListener("click", function () {
         Modal.style.display = "none";
     });
 }
