@@ -8,6 +8,7 @@ body {
     background-color: black;
 }
 
+/* 헤더 css */
 #headBar {
     display: flex;
     flex-direction: column;
@@ -41,6 +42,7 @@ body {
     background-color: transparent;
 }
 
+/* 카드 css */
 #cardContainer {
     padding: 2% 10%;
     justify-items: center;
@@ -65,20 +67,17 @@ body {
 
 #cardContainer .poster {
     width: 100%;
-    height: auto;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
 }
 
 #cardContainer .title {
     color: white;
-    font-size: 20px;
-}
-
-#cardContainer .title img {
-    padding: 5px;
+    font-size: 1.2rem;
 }
 
 #cardContainer .voteAvg {
     color: white;
-    font-size: 15px;
+    font-size: 1rem;
+    padding: 5px;
 }

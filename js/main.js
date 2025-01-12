@@ -67,17 +67,28 @@ function makeCard(movies) {
 }
 
 //* 버튼 검색 기능 함수
-//todo 검색 결과만 화면에 보이기
 function searchMovie() {
     searchBtn.addEventListener("click", function () {
         const keyword = searchInput.value.toLowerCase();
-        const filteredMovie = popularMoviesArr.filter(function (movie) {
-            return movie["title"].toLowerCase().includes(keyword);
+        const movieCards = document.querySelectorAll(".movieCard");
+
+        movieCards.forEach((card) => {
+            const title = card
+                .querySelector(".title")
+                .textContent.toLowerCase();
+            if (title.includes(keyword)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
         });
-        console.log(filteredMovie);
     });
 }
 searchMovie();
+// const filteredMovie = popularMoviesArr.filter(function (movie) {
+//     return movie["title"].toLowerCase().includes(keyword);
+// });
+// console.log(filteredMovie);
 
 //* 엔터기 검색 기능 함수
 function enterKey() {
