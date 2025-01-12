@@ -93,12 +93,23 @@ searchMovie();
 //* 엔터기 검색 기능 함수
 function enterKey() {
     const keyword = searchInput.value.toLowerCase();
-    const filteredMovie = popularMoviesArr.filter(function (movie) {
-        return movie["title"].toLowerCase().includes(keyword);
+    const movieCards = document.querySelectorAll(".movieCard");
+
+    movieCards.forEach((card) => {
+        const title = card.querySelector(".title").textContent.toLowerCase();
+        if (title.includes(keyword)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
     });
-    console.log(filteredMovie);
 }
 enterKey();
+
+// const filteredMovie = popularMoviesArr.filter(function (movie) {
+//     return movie["title"].toLowerCase().includes(keyword);
+// });
+// console.log(filteredMovie);
 
 //* 모달창 여는 함수
 function openModal() {
