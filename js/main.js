@@ -25,7 +25,6 @@ function fetchMovie() {
         .then((res) => res.json())
         .then((res) => {
             popularMoviesArr = res.results;
-            console.log(popularMoviesArr);
             makeCard(res);
         })
         .catch((err) => console.error("fetch error!!!", err));
@@ -71,17 +70,19 @@ function searchMovie() {
     searchBtn.addEventListener("click", function () {
         const keyword = searchInput.value.toLowerCase();
         const movieCards = document.querySelectorAll(".movieCard");
+        const filteredTitles = [];
 
         movieCards.forEach((card) => {
             const title = card
                 .querySelector(".title")
                 .textContent.toLowerCase();
-            if (title.includes(keyword)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
+            title.includes(keyword)
+                ? (card.style.display = "block") && filteredTitles.push(title)
+                : (card.style.display = "none");
         });
+        if (filteredTitles.length > 0) {
+            console.log(filteredTitles);
+        }
     });
 }
 searchMovie();
@@ -94,15 +95,17 @@ searchMovie();
 function enterKey() {
     const keyword = searchInput.value.toLowerCase();
     const movieCards = document.querySelectorAll(".movieCard");
+    const filteredTitles = [];
 
     movieCards.forEach((card) => {
         const title = card.querySelector(".title").textContent.toLowerCase();
-        if (title.includes(keyword)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
+        title.includes(keyword)
+            ? (card.style.display = "block") && filteredTitles.push(title)
+            : (card.style.display = "none");
     });
+    if (filteredTitles.length > 0) {
+        console.log(filteredTitles);
+    }
 }
 enterKey();
 
