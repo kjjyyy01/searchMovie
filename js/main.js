@@ -1,14 +1,8 @@
-//* ul태그에 접근
 const resultUl = document.querySelector("#cardArea");
 const searchBtn = document.querySelector("#searchBtn");
 const searchInput = document.querySelector("#searchInput");
 const opModal = document.querySelector("#modal");
 const clModal = document.querySelector("#close");
-
-const popularMoviesUrl =
-    "https://api.themoviedb.org/3/movie/popular?language=ko&page=1";
-const searchMoviesUrl =
-    "https://api.themoviedb.org/3/search/movie?query=%EC%95%88&include_adult=false&language=ko&page=1";
 
 const options = {
     method: "GET",
@@ -19,14 +13,17 @@ const options = {
     },
 };
 
-let popularMoviesArr = [];
+let movies = [];
 
 //* 데이터 읽어오는 함수
 function fetchMovie() {
-    fetch(popularMoviesUrl, options)
+    fetch(
+        "https://api.themoviedb.org/3/movie/popular?language=ko&page=1",
+        options
+    )
         .then((res) => res.json())
         .then((res) => {
-            popularMoviesArr = res.results;
+            movies = res.results;
             makeCard(res);
         })
         .catch((err) => console.error("fetch error!!!", err));
@@ -57,7 +54,7 @@ function makeCard(movies) {
 
 //*검색 기능 함수
 function searchMovies(keyword) {
-    const filteredMovie = popularMoviesArr.filter(function (movie) {
+    const filteredMovie = movies.filter(function (movie) {
         return movie["title"].toLowerCase().includes(keyword);
     });
     console.log(filteredMovie);
@@ -77,11 +74,7 @@ function searchMovies(keyword) {
             card.style.display = "none";
         }
     });
-    if (keyword <= 0) {
-        alert("검색어를 입력하세요");
-    }
 }
-searchMovies();
 
 //todo 포스터 ,상세정보, 제목, 개봉일, 평점 넣기 불러오기
 //* 모달창 여는 함수
@@ -101,6 +94,7 @@ function closeModal() {
 }
 closeModal();
 
+//! dialog 태그 사용해서 해보기!
 //* 이벤트 리스너 모음
 searchBtn.addEventListener("click", () => {
     const keyword = searchInput.value.toLowerCase();
