@@ -2,11 +2,13 @@
 const resultUl = document.querySelector("#cardArea");
 const searchBtn = document.querySelector("#searchBtn");
 const searchInput = document.querySelector("#searchInput");
-const Modal = document.querySelector("#modal");
-const Close = document.querySelector("#close");
+const opModal = document.querySelector("#modal");
+const clModal = document.querySelector("#close");
 
 const popularMoviesUrl =
     "https://api.themoviedb.org/3/movie/popular?language=ko&page=1";
+const searchMoviesUrl =
+    "https://api.themoviedb.org/3/search/movie?query=%EC%95%88&include_adult=false&language=ko&page=1";
 
 const options = {
     method: "GET",
@@ -75,8 +77,31 @@ function searchMovies(keyword) {
             card.style.display = "none";
         }
     });
+    if (keyword <= 0) {
+        alert("검색어를 입력하세요");
+    }
 }
+searchMovies();
 
+//todo 포스터 ,상세정보, 제목, 개봉일, 평점 넣기 불러오기
+//* 모달창 여는 함수
+function openModal() {
+    resultUl.addEventListener("click", function (event) {
+        console.log(event.target);
+        opModal.style.display = "block";
+    });
+}
+openModal();
+
+//* 모달창 닫는 함수
+function closeModal() {
+    opModal.addEventListener("click", function () {
+        opModal.style.display = "none";
+    });
+}
+closeModal();
+
+//* 이벤트 리스너 모음
 searchBtn.addEventListener("click", () => {
     const keyword = searchInput.value.toLowerCase();
     searchMovies(keyword);
@@ -88,21 +113,3 @@ searchInput.addEventListener("keydown", (event) => {
         searchMovies(keyword);
     }
 });
-
-//* 모달창 여는 함수
-function openModal() {
-    resultUl.addEventListener("click", function (event) {
-        console.log(event.target);
-        //todo 모달 제목, 내용 까지 신경써야함
-        Modal.style.display = "block";
-    });
-}
-openModal();
-
-//* 모달창 닫는 함수 & 닫기 버튼
-function closeModal() {
-    Close.addEventListener("click", function () {
-        Modal.style.display = "none";
-    });
-}
-closeModal();
