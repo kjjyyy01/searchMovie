@@ -1,7 +1,7 @@
 const resultUl = document.querySelector("#cardArea");
 const searchBtn = document.querySelector("#searchBtn");
 const searchInput = document.querySelector("#searchInput");
-const opModal = document.querySelector("#modal");
+const modal = document.querySelector("#modal");
 const clModal = document.querySelector("#close");
 
 const options = {
@@ -80,17 +80,16 @@ function searchMovies(keyword) {
 //todo 포스터 ,상세정보, 제목, 개봉일, 평점 넣기 불러오기
 //* 모달창 여는 함수
 function openModal() {
-    resultUl.addEventListener("click", function (event) {
-        console.log(event.target);
-        opModal.style.display = "block";
+    resultUl.addEventListener("click", () => {
+        modal.showModal();
     });
 }
 openModal();
 
 //* 모달창 닫는 함수
 function closeModal() {
-    opModal.addEventListener("click", function () {
-        opModal.style.display = "none";
+    clModal.addEventListener("click", () => {
+        modal.close();
     });
 }
 closeModal();
