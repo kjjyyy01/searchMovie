@@ -81,3 +81,9 @@ main {
     font-size: 1rem;
     padding: 5px;
 }
+
+#cardArea p {
+    position: absolute;
+    color: white;
+    font-size: 1.7rem;
+}

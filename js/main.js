@@ -55,20 +55,16 @@ function makeCard(movies) {
 
 //*검색 기능 함수
 function searchMovies(keyword) {
-    const filteredMovie = movies.filter(function (movie) {
-        return movie["title"].toLowerCase().includes(keyword);
-    });
-    const movieCards = Array.from(document.getElementsByClassName("movieCard"));
-    movieCards.forEach((card) => {
-        const cardTitle = card
-            .querySelector(".title")
-            .textContent.toLowerCase();
-        if (cardTitle.includes(keyword)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
+    const filteredMovies = movies.filter((movie) =>
+        movie["title"].toLowerCase().includes(keyword)
+    );
+    console.log(filteredMovies);
+
+    if (filteredMovies.length > 0) {
+        makeCard({ results: filteredMovies });
+    } else {
+        cardContainer.innerHTML = "<p>검색결과가 없습니다.</p>";
+    }
 }
 
 //* 모달 여는 함수
@@ -82,10 +78,8 @@ function openModal() {
         // movie는 영화 객체 하나하나
         const sameMovieId = movies.find((movie) => movie.id == clickMovieId);
 
-        if (sameMovieId) {
-            modalInfo(sameMovieId);
-            modal.showModal();
-        }
+        modalInfo(sameMovieId);
+        modal.showModal();
     });
 }
 openModal();
