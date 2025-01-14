@@ -82,7 +82,7 @@ main {
     padding: 5px;
 }
 
-#cardArea p {
+#cardArea .searchResultNo {
     position: absolute;
     color: white;
     font-size: 1.7rem;

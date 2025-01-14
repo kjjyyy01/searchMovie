@@ -63,7 +63,7 @@ function searchMovies(keyword) {
     if (filteredMovies.length > 0) {
         makeCard({ results: filteredMovies });
     } else {
-        cardContainer.innerHTML = "<p>검색결과가 없습니다.</p>";
+        cardContainer.innerHTML = `<p class="searchResultNo">검색결과가 없습니다.</p>`;
     }
 }
 
