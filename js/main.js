@@ -1,8 +1,8 @@
-const resultUl = document.querySelector("#cardArea");
-const searchBtn = document.querySelector("#searchBtn");
-const searchInput = document.querySelector("#searchInput");
+const cardContainer = document.querySelector("#cardArea");
+const searchButton = document.querySelector("#searchBtn");
+const searchInputArea = document.querySelector("#searchInput");
 const modal = document.querySelector("#modal");
-const clModal = document.querySelector("#close");
+const modalClose = document.querySelector("#close");
 
 const options = {
     method: "GET",
@@ -13,8 +13,6 @@ const options = {
     },
 };
 
-let movies = [];
-
 //* 데이터 읽어오는 함수
 function fetchMovie() {
     fetch(
@@ -24,6 +22,7 @@ function fetchMovie() {
         .then((res) => res.json())
         .then((res) => {
             movies = res.results;
+            movieId = movies;
             makeCard(res);
         })
         .catch((err) => console.error("fetch error!!!", err));
@@ -31,10 +30,12 @@ function fetchMovie() {
 fetchMovie();
 
 //* 데이터 뿌려주는 함수
+//movies는 fetch한 20개영화 데이터
 function makeCard(movies) {
     let makeLi = "";
     let movieData = movies.results;
 
+    //movie는fetch한 영화 데이터 각각1개
     movieData.forEach((movie) => {
         let moviePoster = `https://image.tmdb.org/t/p/w500${movie["poster_path"]}`;
         let movieTitle = movie["title"];
@@ -42,14 +43,14 @@ function makeCard(movies) {
         let movieId = movie["id"];
         makeLi += `
         <li class="movieCard" id="${movieId}">
-        <img class="poster"src="${moviePoster}" alt="">
-        <p class="title">${movieTitle}</p>
-        <p class="voteAvg">⭐: ${movieVoteAvg}</p>
+            <img class="poster"src="${moviePoster}" alt="">
+            <p class="title">${movieTitle}</p>
+            <p class="voteAvg">⭐: ${movieVoteAvg}</p>
         </li>
         
         `;
     });
-    resultUl.innerHTML = makeLi;
+    cardContainer.innerHTML = makeLi;
 }
 
 //*검색 기능 함수
@@ -57,19 +58,12 @@ function searchMovies(keyword) {
     const filteredMovie = movies.filter(function (movie) {
         return movie["title"].toLowerCase().includes(keyword);
     });
-    console.log(filteredMovie);
-
     const movieCards = Array.from(document.getElementsByClassName("movieCard"));
-    console.log(movieCards);
     movieCards.forEach((card) => {
         const cardTitle = card
             .querySelector(".title")
             .textContent.toLowerCase();
-        if (
-            filteredMovie.some(
-                (movie) => movie.title.toLowerCase() === cardTitle
-            )
-        ) {
+        if (cardTitle.includes(keyword)) {
             card.style.display = "block";
         } else {
             card.style.display = "none";
@@ -77,33 +71,64 @@ function searchMovies(keyword) {
     });
 }
 
-//todo 포스터 ,상세정보, 제목, 개봉일, 평점 넣기 불러오기
-//* 모달창 여는 함수
+//* 모달 여는 함수
 function openModal() {
-    resultUl.addEventListener("click", () => {
-        modal.showModal();
+    cardContainer.addEventListener("click", (e) => {
+        //closest(): 선택된 요소의 상위 요소 중 selector와 일치하는 가장 근접한 부모 요소를 반환
+        const clickMovieId = e.target.closest(".movieCard").id;
+
+        // 클릭한 카드의 Id 가져오기
+        // 클릭된 영화id와 영화 데이터속id가 같은 데이터 저장
+        // movie는 영화 객체 하나하나
+        const sameMovieId = movies.find((movie) => movie.id == clickMovieId);
+
+        if (sameMovieId) {
+            modalInfo(sameMovieId);
+            modal.showModal();
+        }
     });
 }
 openModal();
 
-//* 모달창 닫는 함수
+//* 모달 닫는 함수
 function closeModal() {
-    clModal.addEventListener("click", () => {
-        modal.close();
+    modal.addEventListener("click", (e) => {
+        if (e.target.id === "close") {
+            modal.close();
+        }
     });
 }
 closeModal();
 
-//! dialog 태그 사용해서 해보기!
+//* 모달에 정보 넣는 함수
+function modalInfo(info) {
+    const { title, vote_average, poster_path, overview, release_date } = info;
+
+    makeModal = `
+    <div id="modalContent">
+        <span id="close">&times;</span>
+        <img src="https://image.tmdb.org/t/p/w500${poster_path}"
+            alt="">
+        <h1>${title}</h1>
+        <p>상세 정보: ${overview}</p>
+        <p>개봉일: ${release_date}</p>
+        <p>평점: ${vote_average}</p>
+    </div>
+    
+    
+    `;
+    modal.innerHTML = makeModal;
+}
+
 //* 이벤트 리스너 모음
-searchBtn.addEventListener("click", () => {
-    const keyword = searchInput.value.toLowerCase();
+searchButton.addEventListener("click", () => {
+    const keyword = searchInputArea.value.toLowerCase();
     searchMovies(keyword);
 });
 
-searchInput.addEventListener("keydown", (event) => {
+searchInputArea.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        const keyword = searchInput.value.toLowerCase();
+        const keyword = searchInputArea.value.toLowerCase();
         searchMovies(keyword);
     }
 });
