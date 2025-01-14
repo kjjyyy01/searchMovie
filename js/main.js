@@ -59,7 +59,8 @@ function searchMovies(keyword) {
     });
     console.log(filteredMovie);
 
-    const movieCards = document.querySelectorAll(".movieCard");
+    const movieCards = Array.from(document.getElementsByClassName("movieCard"));
+    console.log(movieCards);
     movieCards.forEach((card) => {
         const cardTitle = card
             .querySelector(".title")
