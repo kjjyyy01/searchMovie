@@ -30,12 +30,10 @@ function fetchMovie() {
 fetchMovie();
 
 //* 데이터 뿌려주는 함수
-//movies는 fetch한 20개영화 데이터
 function makeCard(movies) {
     let makeLi = "";
     let movieData = movies.results;
 
-    //movie는fetch한 영화 데이터 각각1개
     movieData.forEach((movie) => {
         let moviePoster = `https://image.tmdb.org/t/p/w500${movie["poster_path"]}`;
         let movieTitle = movie["title"];
@@ -70,12 +68,8 @@ function searchMovies(keyword) {
 //* 모달 여는 함수
 function openModal() {
     cardContainer.addEventListener("click", (e) => {
-        //closest(): 선택된 요소의 상위 요소 중 selector와 일치하는 가장 근접한 부모 요소를 반환
         const clickMovieId = e.target.closest(".movieCard").id;
 
-        // 클릭한 카드의 Id 가져오기
-        // 클릭된 영화id와 영화 데이터속id가 같은 데이터 저장
-        // movie는 영화 객체 하나하나
         const sameMovieId = movies.find((movie) => movie.id == clickMovieId);
 
         modalInfo(sameMovieId);
@@ -104,8 +98,8 @@ function modalInfo(info) {
         <img src="https://image.tmdb.org/t/p/w500${poster_path}"
             alt="">
         <h1>${title}</h1>
-        <p>상세 정보: ${overview}</p>
-        <p>개봉일: ${release_date}</p>
+        <p class="modalTitle">상세 정보: ${overview}</p>
+        <p class="modalTitle">개봉일: ${release_date}</p>
         <p>평점: ${vote_average}</p>
     </div>
     
