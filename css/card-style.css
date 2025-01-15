@@ -4,7 +4,7 @@ main {
     justify-items: center;
 }
 
-#cardArea {
+#cardContainer {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     justify-items: center;
