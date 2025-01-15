@@ -1,4 +1,4 @@
-const cardContainer = document.querySelector("#cardArea");
+const cardContainer = document.querySelector("#cardContainer");
 const searchButton = document.querySelector("#searchBtn");
 const searchInputArea = document.querySelector("#searchInput");
 const modal = document.querySelector("#modal");
