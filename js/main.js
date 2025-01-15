@@ -1,40 +1,18 @@
+import { fetchMovie } from "./api.js";
+
 const cardContainer = document.querySelector("#cardContainer");
 const searchButton = document.querySelector("#searchBtn");
 const searchInputArea = document.querySelector("#searchInput");
 const modal = document.querySelector("#modal");
-const modalClose = document.querySelector("#close");
 
-const options = {
-    method: "GET",
-    headers: {
-        accept: "application/json",
-        Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmODIyZGRlNzlmMTM4OTJiODNmNGQwZWYyODA1N2NjNyIsIm5iZiI6MTczNjI5NzI1MC4xNzcsInN1YiI6IjY3N2RjYjIyMTI2Njc5Njg4NTRlNTIwNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SmP-bGfzsthwXW1aqN7W3Zr64qf-keRNMH0gn6HPW9A",
-    },
-};
-
-//* 데이터 읽어오는 함수
-function fetchMovie() {
-    fetch(
-        "https://api.themoviedb.org/3/movie/popular?language=ko&page=1",
-        options
-    )
-        .then((res) => res.json())
-        .then((res) => {
-            movies = res.results;
-            movieId = movies;
-            makeCard(res);
-        })
-        .catch((err) => console.error("fetch error!!!", err));
-}
-fetchMovie();
+let movies = [];
 
 //* 데이터 뿌려주는 함수
-function makeCard(movies) {
+function makeCard(moviesData) {
+    movies = moviesData.results;
     let makeLi = "";
-    let movieData = movies.results;
 
-    movieData.forEach((movie) => {
+    movies.forEach((movie) => {
         let moviePoster = `https://image.tmdb.org/t/p/w500${movie["poster_path"]}`;
         let movieTitle = movie["title"];
         let movieVoteAvg = movie["vote_average"];
@@ -50,6 +28,8 @@ function makeCard(movies) {
     });
     cardContainer.innerHTML = makeLi;
 }
+
+fetchMovie(makeCard);
 
 //*검색 기능 함수
 function searchMovies(keyword) {
@@ -92,7 +72,7 @@ closeModal();
 function modalInfo(info) {
     const { title, vote_average, poster_path, overview, release_date } = info;
 
-    makeModal = `
+    const makeModal = `
     <div id="modalContent">
         <span id="close">&times;</span>
         <img src="https://image.tmdb.org/t/p/w500${poster_path}"
