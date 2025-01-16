@@ -16,11 +16,11 @@ export function modalInfo(modal, info) {
     const makeModal = `
     <div id="modalContent">
         <span id="close" class="closeButton">&times;</span>
-        <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}포스터">
-        <h1>${title}</h1>
-        <p class="modalTitle">상세 정보: ${overview}</p>
-        <p class="modalTitle">개봉일: ${release_date}</p>
-        <p>평점: ${vote_average}</p>
+        <img class="modalPoster" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}포스터">
+        <h1 class="modalTitle">${title}</h1>
+        <p class="overview">${overview}</p>
+        <p class="releaseDate">개봉일: ${release_date}</p>
+        <p class="modalVoteAverge">⭐: ${vote_average}</p>
     </div>`;
     modal.innerHTML = makeModal;
 }
