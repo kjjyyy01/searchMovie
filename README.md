@@ -37,19 +37,6 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="80" alt="javascript logo"  />
 </div>
 
-<br />
-## 📂 파일 구조
-┣ 📂 css  
-┃ ┗ 📄 styles.css 
-┃ ┗ 📄 card.css 
-┃ ┗ 📄 modal.css 
-┣ 📂 js  
-┃ ┣ 📄 api.js  
-┃ ┣ 📄 search.js 
-┃ ┣ 📄 modal.js 
-┃ ┗ 📄 main.js 
-┣ 📄 index.html
-┗ 📄 README.md 
 
 <br />
 
