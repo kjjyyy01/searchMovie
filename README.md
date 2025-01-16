@@ -9,11 +9,10 @@
 
 <br />
 
+### 💬 배포 링크
+https://kjjyyy01.github.io/searchMovie/
 
-
-
-
-### 화면 구성
+### ✨ 화면 구성
 ![Image](https://github.com/user-attachments/assets/4f9b36bf-e59d-4626-a089-262a286fdcc4)
 ![Image](https://github.com/user-attachments/assets/a7af84c0-08d4-47b8-9056-6e4e572a63fd)
 
