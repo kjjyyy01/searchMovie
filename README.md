@@ -18,7 +18,7 @@
 
 |모달창|
 |:---:|
-|<img src="https://i.ibb.co/m5BbvVr/2025-01-16-222626.png" width="700" height="500"/>|
+|<img src="https://i.ibb.co/m5BbvVr/2025-01-16-222626.png" width="1000" height="800"/>|
 |영화마다 모달창을 띄우는 화면입니다.|
 
 <br />
@@ -29,7 +29,7 @@
 
 <br />
 
-## ⚙ 기술 스택
+##⚙ 기술 스택
 ### Structure
 <div>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="80" alt="html5 logo"  />
