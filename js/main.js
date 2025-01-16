@@ -11,7 +11,7 @@ let movies = [];
 
 //* 데이터 뿌려주는 함수
 function makeCard(moviesData) {
-    movies = moviesData.results;
+    movies = moviesData.results; //movies를 moviesData.results로 초기화
     let makeLi = "";
 
     movies.forEach((movie) => {
@@ -29,13 +29,11 @@ function makeCard(moviesData) {
         `;
     });
     cardContainer.innerHTML = makeLi;
-
-    openModal(cardContainer, movies, modal);
 }
 
-fetchMovie(makeCard);
+fetchMovie(makeCard); //API 데이터를 가져오고, 가져온 데이터를 makeCard 함수에 전달하여 영화 카드를 생성하는 작업을 수행
 
-//* 이벤트 리스너 모음
+//* 검색 이벤트 리스너
 searchButton.addEventListener("click", () => {
     const keyword = searchInputArea.value.toLowerCase();
     searchMovies(keyword, movies, makeCard, cardContainer);
@@ -48,4 +46,20 @@ searchInputArea.addEventListener("keydown", (event) => {
     }
 });
 
-closeModal(modal);
+cardContainer.addEventListener("click", (e) => {
+    const movieCard = e.target.closest(".movieCard");
+    if (!movieCard) return; // 카드 외 클릭 시 무시
+
+    const movieId = movieCard.id;
+    const movieInfo = movies.find((movie) => movie.id == movieId);
+    if (movieInfo) {
+        openModal(modal, movieInfo);
+    }
+});
+
+//* 모달 닫기
+modal.addEventListener("click", (e) => {
+    if (e.target.classList.contains("closeButton")) {
+        closeModal(modal);
+    }
+});
