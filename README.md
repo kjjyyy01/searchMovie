@@ -17,8 +17,9 @@
 
 
 |모달창|
+
 |:---:|
-|<img src="https://i.ibb.co/m5BbvVr/2025-01-16-222626.png" width="1000" height="800"/>|
+|<img src="![스크린샷 2025-01-16 222626](https://github.com/user-attachments/assets/447f05b1-6c00-4aa0-95ae-529d22286090)" width="1000" height="800"/>|
 |영화마다 모달창을 띄우는 화면입니다.|
 
 <br />
