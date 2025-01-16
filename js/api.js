@@ -14,8 +14,8 @@ export function fetchMovie(makeCard) {
         options
     )
         .then((res) => res.json())
-        .then((res) => {
-            makeCard(res);
+        .then((moviesData) => {
+            makeCard(moviesData);
         })
         .catch((err) => console.error("fetch error!!!", err));
 }
