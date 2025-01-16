@@ -13,7 +13,7 @@
 <img src="https://i.ibb.co/mhtxpvn/2025-01-16-165957.png" width="1000" height="600"/>
 
 <br />
-<img src="https://i.ibb.co/vLYpvRg/2025-01-16-224151.png" width="1000" height="600"/>
+<img src="" width="1000" height="600"/>
 
 
 <br />
@@ -36,6 +36,20 @@
 <div>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="80" alt="javascript logo"  />
 </div>
+
+<br />
+## 📂 파일 구조
+┣ 📂 css  
+┃ ┗ 📄 styles.css 
+┃ ┗ 📄 card.css 
+┃ ┗ 📄 modal.css 
+┣ 📂 js  
+┃ ┣ 📄 api.js  
+┃ ┣ 📄 search.js 
+┃ ┣ 📄 modal.js 
+┃ ┗ 📄 main.js 
+┣ 📄 index.html
+┗ 📄 README.md 
 
 <br />
 
