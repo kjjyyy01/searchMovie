@@ -21,6 +21,7 @@
 
 
 <br />
+
 ## 📄 기능 소개
 - TMDB API에서 인기영화API와 영화 검색 API를 통해 작업했습니다.
 - 영화 검색 API를 통해 영화 검색기능을 구현했습니다.
@@ -28,7 +29,8 @@
 
 <br />
 
-##⚙ 기술 스택
+## ⚙ 기술 스택
+
 ### Structure
 <div>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="80" alt="html5 logo"  />
