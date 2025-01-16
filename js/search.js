@@ -2,7 +2,6 @@ export function searchMovies(keyword, movies, makeCard, cardContainer) {
     const filteredMovies = movies.filter((movie) =>
         movie["title"].toLowerCase().includes(keyword)
     );
-    console.log(filteredMovies);
 
     if (filteredMovies.length > 0) {
         makeCard({ results: filteredMovies });
