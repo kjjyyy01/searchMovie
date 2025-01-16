@@ -36,13 +36,13 @@ fetchMovie(makeCard); //API 데이터를 가져오고, 가져온 데이터를 ma
 //* 검색 이벤트 리스너
 searchButton.addEventListener("click", () => {
     const keyword = searchInputArea.value.toLowerCase();
-    searchMovies(keyword, movies, makeCard, cardContainer);
+    searchMovies(keyword, makeCard, cardContainer);
 });
 
 searchInputArea.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         const keyword = searchInputArea.value.toLowerCase();
-        searchMovies(keyword, movies, makeCard, cardContainer);
+        searchMovies(keyword, makeCard, cardContainer);
     }
 });
 
