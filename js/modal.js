@@ -20,7 +20,7 @@ export function modalInfo(modal, info) {
         <h1 class="modalTitle">${title}</h1>
         <p class="overview">${overview}</p>
         <p class="releaseDate">개봉일: ${release_date}</p>
-        <p class="modalVoteAverge">⭐: ${vote_average}</p>
+        <p class="modalVoteAverage">⭐: ${vote_average}</p>
     </div>`;
     modal.innerHTML = makeModal;
 }
