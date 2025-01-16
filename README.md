@@ -9,11 +9,15 @@
 
 <br />
 
+
+
+
+
 ### 화면 구성
-<img src="https://i.ibb.co/mhtxpvn/2025-01-16-165957.png" width="1000" height="600"/>
+<img src="![Image](https://github.com/user-attachments/assets/4f9b36bf-e59d-4626-a089-262a286fdcc4)" width="1000" height="600"/>
 
 <br />
-<img src="" width="1000" height="600"/>
+<img src="![Image](https://github.com/user-attachments/assets/a7af84c0-08d4-47b8-9056-6e4e572a63fd)" width="1000" height="600"/>
 
 
 <br />
