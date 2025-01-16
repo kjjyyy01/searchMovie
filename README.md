@@ -10,10 +10,10 @@
 <br />
 
 ### 화면 구성
-<img src="https://i.ibb.co/mhtxpvn/2025-01-16-165957.png" width="700" height="500"/>
+<img src="https://i.ibb.co/mhtxpvn/2025-01-16-165957.png" width="1000" height="600"/>
 
 
-<img src="https://i.ibb.co/m5BbvVr/2025-01-16-222626.png" width="700" height="500"/>
+<img src="https://i.ibb.co/m5BbvVr/2025-01-16-222626.png" width="1000" height="600"/>
 
 
 <br />
