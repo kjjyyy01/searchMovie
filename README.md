@@ -16,7 +16,7 @@
 
 |모달창|
 |:---:|
-|<img src="https://user-images.githubusercontent.com/80824750/208456234-fb5fe434-aa65-4d7a-b955-89098d5bbe0b.gif" width="700" height="500"/>|
+|<img src="https://user-images.githubusercontent.com/80824750/208456234-fb5fe434-aa65-4d7a-b955-89098d5bbe0b.gif" width="1000" height="500"/>|
 |영화마다 모달창을 띄우는 화면입니다.|
 
 <br />
