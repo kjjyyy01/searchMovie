@@ -10,17 +10,11 @@
 <br />
 
 ### 화면 구성
-|메인 화면|
-|:---:|
-|<img src="https://i.ibb.co/mhtxpvn/2025-01-16-165957.png" width="700" height="500"/>|
-|20개의 영화가 랜더링된 화면입니다.|
+<img src="https://i.ibb.co/mhtxpvn/2025-01-16-165957.png" width="700" height="500"/>
 
 
-|모달창|
+<img src="https://i.ibb.co/m5BbvVr/2025-01-16-222626.png" width="700" height="500"/>
 
-|:---:|
-|<img src="https://i.ibb.co/m5BbvVr/2025-01-16-222626.png" width="700" height="500"/>|
-|영화마다 모달창을 띄우는 화면입니다.|
 
 <br />
 ## 📄 기능 소개
