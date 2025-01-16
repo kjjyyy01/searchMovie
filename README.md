@@ -25,16 +25,16 @@
 <br />
 
 ### 화면 구성
-|화면 명|
+|메인 화면|
 |:---:|
-|<img src="https://i.ibb.co/mhtxpvn/2025-01-16-165957.png" width="450"/>|
-|화면에 대한 설명을 입력합니다.|
+|<img src="https://i.ibb.co/mhtxpvn/2025-01-16-165957.png" width="600"/>|
+|20개의 영화가 랜더링된 화면입니다.|
 
 
-|화면 명|
+|모달창|
 |:---:|
 |<img src="https://user-images.githubusercontent.com/80824750/208456234-fb5fe434-aa65-4d7a-b955-89098d5bbe0b.gif" width="450"/>|
-|화면에 대한 설명을 입력합니다.|
+|영화마다 모달창을 띄우는 화면입니다.|
 
 <br />
 
