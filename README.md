@@ -9,8 +9,6 @@
 - 사용한 기술 스택
 - 틀러블 슈팅
 
-필요한 기술 스택에 대한 logo는 [skills 폴더](/skills/)에서 다운로드 받을 수 있습니다.
-
 <br />
 
 ### 화면 구성
@@ -28,22 +26,19 @@
 <br />
 
 ## ⚙ 기술 스택
-> skills 폴더에 있는 아이콘을 이용할 수 있습니다.
 ### Front-end
 <div>
 <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/JavaScript.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/HTML.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/CSS.png?raw=true" width="80">
 </div>
 
 <br />
 
 ## 🤔 트러블 슈팅
-- 
+- 1
     - 
-- 
+- 2
     - 
-- 
+- 3
     - 
 
 <br />
