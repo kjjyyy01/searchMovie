@@ -27,7 +27,8 @@
 ### 화면 구성
 |화면 명|
 |:---:|
-|<img src="https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif" width="450"/>|
+|<img src="![스크린샷 2025-01-16 165957](https://github.com/user-attachments/assets/cb8aa9b0-bc45-4b63-8ba5-2f29817ff516)
+" width="450"/>|
 |화면에 대한 설명을 입력합니다.|
 
 
