@@ -1,9 +1,13 @@
+#modalContent {
+    display: grid;
+    justify-items: center;
+}
+
 #modal {
-    position: absolute;
-    top: 25%;
-    left: 19%;
-    width: 60%;
-    height: 60%;
+    position: fixed;
+    top: 9%;
+    left: 35%;
+    width: 30%;
     border-radius: 8px;
 }
 
@@ -12,10 +16,23 @@
     opacity: 0.2;
 }
 
-#modal img {
+#modal .modalPoster {
     width: 50%;
-    height: 50%;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
+    margin: 20px 0;
+}
+
+#modal .overview {
+    margin: 18px;
+    font-size: 1rem;
+}
+#modal .releaseDate {
+    font-size: 1.5rem;
+}
+#modal .modalVoteAverage {
+    margin: 10px;
+    font-size: 1.3rem;
 }
 
 #close {
