@@ -14,10 +14,10 @@
 
 
 ### 화면 구성
-<img src="![Image](https://github.com/user-attachments/assets/4f9b36bf-e59d-4626-a089-262a286fdcc4)" width="1000" height="600"/>
+<img src="![Image](https://github.com/user-attachments/assets/4f9b36bf-e59d-4626-a089-262a286fdcc4)"/>
 
 <br />
-<img src="![Image](https://github.com/user-attachments/assets/a7af84c0-08d4-47b8-9056-6e4e572a63fd)" width="1000" height="600"/>
+<img src="![Image](https://github.com/user-attachments/assets/a7af84c0-08d4-47b8-9056-6e4e572a63fd)"/>
 
 
 <br />
