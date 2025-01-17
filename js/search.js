@@ -1,5 +1,7 @@
 import { options } from "./api.js";
 
+//* 검색 api를 통한 검색 기능
+// 검색 버튼 클릭 시 검색이 될 수 있도록 호출, 엔터키 누를 시 검색이 될 수 있도록 호출
 export function searchMovies(keyword, makeCard, cardContainer) {
     const searchUrl = `https://api.themoviedb.org/3/search/multi?query=${keyword}&include_adult=false&language=ko&page=1`;
 

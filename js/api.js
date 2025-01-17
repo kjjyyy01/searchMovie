@@ -7,7 +7,7 @@ export const options = {
     },
 };
 
-//* 데이터 읽어오는 함수
+//* api를 통한 데이터 읽어오는 함수
 export function fetchMovie(makeCard) {
     fetch(
         "https://api.themoviedb.org/3/movie/popular?language=ko&page=1",
